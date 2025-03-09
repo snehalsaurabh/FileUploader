@@ -1,29 +1,41 @@
+/* Reset root container styles */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f1f9 100%);
+}
+
+.App {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 1rem;
-  color: #333;
+  font-size: 3em;
+  margin-bottom: 2rem;
+  color: #2d3748;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .file-upload {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  transition: transform 0.2s;
+}
+
+.file-upload:hover {
+  transform: translateY(-2px);
 }
 
 .file-upload input[type="file"] {
@@ -32,87 +44,137 @@ h1 {
 
 .file-upload label {
   display: inline-block;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0.8em 1.6em;
+  font-size: 1.1em;
+  font-weight: 600;
   color: #fff;
-  background-color: #007bff;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .file-upload label:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .file-upload button {
-  margin-top: 1rem;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  font-weight: 600;
   color: #fff;
-  background-color: #28a745;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .file-upload button:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.file-upload .file-name {
+  margin-top: 1.5rem;
+  font-size: 1.1em;
+  color: #4a5568;
+  background: #f7fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 .file-upload p {
   margin-top: 1rem;
-  font-size: 1em;
-  color: #28a745;
-}
-
-.file-upload .file-name {
-  margin-top: 1rem;
-  font-size: 1em;
-  color: #333;
+  font-size: 1.1em;
+  color: #38a169;
+  font-weight: 500;
 }
 
 .file-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 800px;
-  margin-top: 2rem;
+}
+
+.file-list h2 {
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
 .file-list table {
   width: 100%;
-  border-collapse: collapse;
-}
-
-.file-list th,
-.file-list td {
-  padding: 0.75em;
-  border: 1px solid #ddd;
-  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .file-list th {
-  background-color: #f8f9fa;
+  background: #f8fafc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #e2e8f0;
 }
 
-.file-list tr:nth-child(even) {
-  background-color: #f2f2f2;
+.file-list td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.file-list tr:last-child td {
+  border-bottom: none;
+}
+
+.file-list tr:hover {
+  background-color: #f7fafc;
 }
 
 .file-list button {
-  padding: 0.4em 0.8em;
+  padding: 0.5em 1em;
   font-size: 0.9em;
   font-weight: 500;
   color: #fff;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: all 0.3s ease;
 }
 
 .file-list button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .file-list th,
+  .file-list td {
+    padding: 0.75rem;
+  }
 }
