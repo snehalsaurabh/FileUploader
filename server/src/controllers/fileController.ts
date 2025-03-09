@@ -24,7 +24,7 @@ const uploadFile = async (req: Request, res: Response): Promise<void> => {
 
   await fileRepository.save(file);
 
-  res.status(200).send('File uploaded successfully');
+  res.status(200).json({ message: 'File uploaded successfully' });
 };
 
 const downloadFile = async (req: Request, res: Response): Promise<void> => {
@@ -38,4 +38,10 @@ const downloadFile = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export { uploadFile, downloadFile };
+const listFiles = async (req: Request, res: Response): Promise<void> => {
+  const fileRepository = AppDataSource.getRepository(AppFile);
+  const files = await fileRepository.find();
+  res.json(files);
+};
+
+export { uploadFile, downloadFile, listFiles };

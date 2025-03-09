@@ -1,0 +1,118 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.file-upload {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload label {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.file-upload label:hover {
+  background-color: #0056b3;
+}
+
+.file-upload button {
+  margin-top: 1rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.file-upload button:hover {
+  background-color: #218838;
+}
+
+.file-upload p {
+  margin-top: 1rem;
+  font-size: 1em;
+  color: #28a745;
+}
+
+.file-upload .file-name {
+  margin-top: 1rem;
+  font-size: 1em;
+  color: #333;
+}
+
+.file-list {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.file-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.file-list th,
+.file-list td {
+  padding: 0.75em;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.file-list th {
+  background-color: #f8f9fa;
+}
+
+.file-list tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.file-list button {
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.file-list button:hover {
+  background-color: #0056b3;
+}
