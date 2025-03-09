@@ -105,10 +105,6 @@ FileUploader is a web application that allows users to upload and download files
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgements
 
 - [React](https://reactjs.org/)
