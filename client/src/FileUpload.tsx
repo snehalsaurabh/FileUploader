@@ -30,7 +30,6 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
         headers: {
           'Accept': 'application/json',
         },
-        credentials: 'include'
       });
   
       console.log("Response",response);
