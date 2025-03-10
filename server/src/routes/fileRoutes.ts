@@ -9,4 +9,5 @@ router.post('/upload', upload.single('file'), uploadFile);
 router.get('/download/:fileName', downloadFile);
 router.get('/', listFiles);
 
+console.log()
 export default router;

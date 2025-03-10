@@ -4,6 +4,7 @@ import { AppFile } from '../entity/File';
 import { uploadFileToR2, downloadFileFromR2 } from '../services/r2service';
 
 const uploadFile = async (req: Request, res: Response): Promise<void> => {
+  console.log("uploadFile function being called");
   if (!req.file) {
     res.status(400).send('No file uploaded');
     return;
@@ -13,7 +14,7 @@ const uploadFile = async (req: Request, res: Response): Promise<void> => {
   const url = `${process.env.R2_ENDPOINT}/${process.env.R2_BUCKET_NAME}/${key}`;
 
   await uploadFileToR2(key, buffer, mimetype);
-
+  console.log("File Uploaded Successfully")
   const fileRepository = AppDataSource.getRepository(AppFile);
   const file = new AppFile();
   file.originalName = originalname;
@@ -23,7 +24,7 @@ const uploadFile = async (req: Request, res: Response): Promise<void> => {
   file.url = url;
 
   await fileRepository.save(file);
-
+  
   res.status(200).json({ message: 'File uploaded successfully' });
 };
 

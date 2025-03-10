@@ -22,22 +22,24 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
   
     const formData = new FormData();
     formData.append('file', file);
-  
+    console.log(status)
     try {
       const response = await fetch('http://localhost:3001/api/files/upload', {
         method: 'POST',
         body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+        credentials: 'include'
       });
   
-      console.log('Response status:', response.status); // Should be 200
-      const result = await response.json();
-      console.log('Response data:', result); // Log response content
-  
+      console.log("Response",response);
       if (response.ok) {
-        setStatus(result.message || 'File uploaded successfully ✅');
+        setStatus('File uploaded successfully ✅');
         onUpload(); // Refresh list
       } else {
-        setStatus(result.message || 'Unexpected error occurred');
+        const error = await response.text();
+        setStatus(`Error uploading file: ${error}`);
       }
     } catch (error) {
       console.error('Error uploading file:', error);
@@ -51,7 +53,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUpload }) => {
       <label htmlFor="file">Choose File</label>
       {file && <p className="file-name">Selected file: {file.name}</p>}
       <button onClick={handleFileUpload}>Upload</button>
-      {status && <p>{status}</p>}
+      <p>{status}</p>
     </div>
   );
 };
